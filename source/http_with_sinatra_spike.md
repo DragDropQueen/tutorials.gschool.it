@@ -2,7 +2,7 @@
 
 ## References
 * Information about spikes
-    * [http://www.lagerweij.com/2013/04/12/spikes-theyre-sharp/](http://scaledagileframework.com/spikes/){:target="_blank"}
+    * [http://www.lagerweij.com/2013/04/12/spikes-theyre-sharp/](http://lagerweij.com/2013/04/12/spikes-theyre-sharp/){:target="_blank"}
     * [http://scaledagileframework.com/spikes/](http://scaledagileframework.com/spikes/){:target="_blank"}
 * [Sinatra documentation](http://www.sinatrarb.com/documentation.html){:target="_blank"}
 * [Online Sinatra book](http://sinatra-book.gittr.com/){:target="_blank"}
