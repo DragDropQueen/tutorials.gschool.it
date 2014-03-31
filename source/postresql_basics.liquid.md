@@ -45,7 +45,7 @@ $ brew install postgres
 ==> Installing postgresql
 ** Lots of other output **
 /usr/local/Cellar/postgresql/9.3.2: 2924 files, 39M
-$ psql --version
+$ psql \--version
 psql (PostgreSQL) 9.3.2
 $ ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
@@ -58,7 +58,7 @@ This series of steps will create a user named gschool_user, ask for a password a
 as the user name and password as the password. You will use this username/password combination when we start accessing
 
 {% terminal %}
-$ createuser --pwprompt --interactive gschool_user
+$ createuser \--pwprompt \--interactive gschool_user
 Enter password for new role:
 Enter it again:
 Shall the new role be a superuser? (y/n) n
