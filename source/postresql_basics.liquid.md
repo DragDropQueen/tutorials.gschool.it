@@ -22,6 +22,7 @@ A student should be able to:
 * display specific rows from a table using a where clause
 * update a set of rows
 * delete one/many rows
+* drop a table/database
 
 ## XP practices learned
 
@@ -55,7 +56,8 @@ $ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
 Just like you have users on your computer, Postgres allows us to create users that have access to the databases within PostgreSql.
 This series of steps will create a user named gschool_user, ask for a password and give it the proper permissions in PostgreSql. You should use gschool_user
-as the user name and password as the password. You will use this username/password combination when we start accessing
+as the user name and password as the password. You will use this username/password combination
+when we start accessing the database from our Ruby applications.
 
 {% terminal %}
 $ createuser \--pwprompt \--interactive gschool_user
@@ -68,10 +70,10 @@ Shall the new role be allowed to create more new roles? (y/n) y
 
 ## Background on relational databases
 
-* Database
+* [Creating a Database](http://www.postgresql.org/docs/9.3/static/manage-ag-createdb.html){:target="_blank"}
 * [Tables/Data Definition](http://www.postgresql.org/docs/9.3/static/ddl-basics.html){:target="_blank"}
 * Rows
-    * Primary key
+    * [Primary key](http://www.postgresql.org/docs/9.3/static/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS){:target="_blank"}
 * Columns
     * [Data types](http://www.postgresql.org/docs/9.3/static/datatype.html){:target="_blank"}
     * [Default values](http://www.postgresql.org/docs/9.3/static/ddl-default.html){:target="_blank"}
@@ -84,33 +86,46 @@ Shall the new role be allowed to create more new roles? (y/n) y
 
 ## [Demo](https://github.com/gSchool/intro_to_sql_demo){:target="_blank"}
 
-Implement SQL to hold the items from the object refactoring homework.
+Implement database to hold the items from the tested Sinatra homework.
 
 1. Create a new database called 'tested_sinatra'.
-    * `psql -d postgres -f create_tested_sinatra_database.sql`
+    * from within PSQL
+    * using `createdb` command
+    * using a .sql file -`psql -d postgres -f create_tested_sinatra_database.sql`
 1. Create items table
     * What columns do I need?
     * How do I autoincrement id?
-    * `psql -d postgres -f create_items_table.sql`
 1. From psql, insert 5 rows of data
 1. From psql, display all rows in the items table
 1. From psql, display only name column for all rows of data
 1. From psql, display one row using where clause
 1. From psql, update one row to have a different name
 1. From psql, delete one row.
+1. From psql, drop the items table.
+1. From psql, drop the tested_sinatra database.
 
+Now your turn...a volunteer please.
 
 ## Homework
 
+You should create a new local git repository as well as a GitHub repository. Each
+assignment below should be implemented in a new .sql file that is committed to
+this repository. You can experiment in psql with each of the commands
+before saving the command to the .sql file. Remember that once
+you create a database or a table, you will need to drop it before
+creating it again.
+
 1. Create a new database called 'url_shortener'.
 1. Create a new table called 'urls'. This table should have the columns that you need to store a shortened URL (id, original_url and count)
-    * The id field should be the primary key, should auto increment and should not allow null.
+    * The id field should be the primary key and should auto increment.
     * The original_url column should not allow null values.
     * The count field should default to 0.
 1. Insert 5 rows of data into the 'urls' table.
     * Give each one a different original_url.
     * Give each one a different count.
-1. Display all of the rows in the urls table
+1. Display all of the rows in the urls table with all of the columns
+1. Display all of the rows in the urls table with only the original_url
+1. Display one row from the urls table with a specific id
 1. Display one row from the urls table with a specific original_url
-1. Update one of the rows to have a new count
+1. Update one of the rows with a specific id to have a new count
 1. Delete one row that matches an original_url
