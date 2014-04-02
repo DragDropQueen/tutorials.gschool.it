@@ -109,13 +109,18 @@ Now your turn...a volunteer please.
 ## Homework
 
 You should fork and clone [this repository](https://github.com/gSchool/introduction_to_sql_homework).
-Save your commands in one .sql file. We will grade this homework by running this one file
-against our local servers and expect it to run without errors the first time.
+Your homework will consist of two .sql files, one to create the database and one that contains
+all of the other commands.
+We will grade this homework by running the files
+against our local servers and expect them to run without errors the first time.
 You can experiment in psql with each of the commands
 before saving the command to the .sql file. Remember that once
 you create a database or a table, you will need to drop it before
-creating it again. You can make sure you file runs by using the
-`psql -d postgres -f file_name.sql` command from the command line.
+creating it again. You can make sure you files run by using the following
+commands from the command line:
+
+* `psql -d postgres -U gschool_user -f create_url_shortener_database.sql`
+* `psql -d url_shortener_(your_first_name)_(your_last_name) -U gschool_user -f all_of_the_other_commands.sql`
 
 1. Create a new database called 'url_shortener_(your_first_name)\_(your_last_name)'.
 1. Create a new table called 'urls'. This table should have the columns that you need to store
