@@ -108,15 +108,18 @@ Now your turn...a volunteer please.
 
 ## Homework
 
-You should create a new local git repository as well as a GitHub repository. Each
-assignment below should be implemented in a new .sql file that is committed to
-this repository. You can experiment in psql with each of the commands
+You should fork and clone [this repository](https://github.com/gSchool/introduction_to_sql_homework).
+Save your commands in one .sql file. We will grade this homework by running this one file
+against our local servers and expect it to run without errors the first time.
+You can experiment in psql with each of the commands
 before saving the command to the .sql file. Remember that once
 you create a database or a table, you will need to drop it before
-creating it again.
+creating it again. You can make sure you file runs by using the
+`psql -d postgres -f file_name.sql` command from the command line.
 
-1. Create a new database called 'url_shortener'.
-1. Create a new table called 'urls'. This table should have the columns that you need to store a shortened URL (id, original_url and count)
+1. Create a new database called 'url_shortener_(your_first_name)\_(your_last_name)'.
+1. Create a new table called 'urls'. This table should have the columns that you need to store
+a shortened URL (id, original_url and count)
     * The id field should be the primary key and should auto increment.
     * The original_url column should not allow null values.
     * The count field should default to 0.
@@ -124,7 +127,7 @@ creating it again.
     * Give each one a different original_url.
     * Give each one a different count.
 1. Display all of the rows in the urls table with all of the columns
-1. Display all of the rows in the urls table with only the original_url
+1. Display all of the rows in the urls table with only the original_url column
 1. Display one row from the urls table with a specific id
 1. Display one row from the urls table with a specific original_url
 1. Update one of the rows with a specific id to have a new count
